@@ -65,60 +65,58 @@ public class TileMap : MonoBehaviour
            spawnTiles[tempA, tempB].isSelected = true;
 
            
-           selectedTiles.Add(spawnTiles[tempA, tempB]);     // adds 10 tiles to selectedTiles list
+           selectedTiles.Add(spawnTiles[tempA, tempB]);    // adds 10 tiles to selectedTiles list
+
            if(selectedTiles[i].index.x < spawnTiles.GetLength(0) && selectedTiles[i].index.y+1 < spawnTiles.GetLength(1))
            {
-            Vector2 temp1 = new Vector2(selectedTiles[i].index.x, selectedTiles[i].index.y+1);   //gets adjacent top tiles from the selected tiles
-            spawnTiles[(int)temp1.x, (int)temp1.y].isAdjecent = true; 
+            Vector2 temp1 = new Vector2(selectedTiles[i].index.x, selectedTiles[i].index.y+1);   //gets adjacent top tile from the selected tiles
+            spawnTiles[(int)temp1.x, (int)temp1.y].isAdjecent = true;       //setting isAdjecent bool to true for changing adjecent tile's color in Tile.cs
+
            }
            if(selectedTiles[i].index.x < spawnTiles.GetLength(0) && selectedTiles[i].index.y-1 > 0)
            {
-            Vector2 temp2 = new Vector2(selectedTiles[i].index.x, selectedTiles[i].index.y-1);   //gets adjacent bottom tiles from the selected tiles
+            Vector2 temp2 = new Vector2(selectedTiles[i].index.x, selectedTiles[i].index.y-1);   //gets adjacent bottom tile from the selected tiles
             spawnTiles[(int)temp2.x, (int)temp2.y].isAdjecent = true;
            }
            if(selectedTiles[i].index.x+1 < spawnTiles.GetLength(0) && selectedTiles[i].index.y < spawnTiles.GetLength(1))
            {
-            Vector2 temp3 = new Vector2(selectedTiles[i].index.x+1, selectedTiles[i].index.y);   //gets adjacent right tiles from the selected tiles
+            Vector2 temp3 = new Vector2(selectedTiles[i].index.x+1, selectedTiles[i].index.y);   //gets adjacent right tile from the selected tiles
             spawnTiles[(int)temp3.x, (int)temp3.y].isAdjecent = true;
 
 
            }
            if(selectedTiles[i].index.x-1 > 0 && selectedTiles[i].index.y < spawnTiles.GetLength(1))
            {
-           Vector2 temp4 = new Vector2(selectedTiles[i].index.x-1, selectedTiles[i].index.y);   //gets adjacent left tiles from the selected tiles
-           spawnTiles[(int)temp4.x, (int)temp4.y].isAdjecent = true;       //setting isAdjecent bool to true for changing adjecent tile's color in Tile.cs
-
+           Vector2 temp4 = new Vector2(selectedTiles[i].index.x-1, selectedTiles[i].index.y);   //gets adjacent left tile from the selected tiles
+           spawnTiles[(int)temp4.x, (int)temp4.y].isAdjecent = true;       
 
            }
            if(selectedTiles[i].index.x < spawnTiles.GetLength(0) && selectedTiles[i].index.y+2 < spawnTiles.GetLength(1))
            {
-           Vector2 temp5 = new Vector2(selectedTiles[i].index.x, selectedTiles[i].index.y+2);   //gets adjacent top 2nd tiles from the selected tiles
+           Vector2 temp5 = new Vector2(selectedTiles[i].index.x, selectedTiles[i].index.y+2);   //gets adjacent top 2nd tile from the selected tiles
            spawnTiles[(int)temp5.x, (int)temp5.y].isAdjecent = true;
 
 
            }
            if(selectedTiles[i].index.x < spawnTiles.GetLength(0) && selectedTiles[i].index.y-2 > 0)
            {
-           Vector2 temp6 = new Vector2(selectedTiles[i].index.x, selectedTiles[i].index.y-2);   //gets adjacent bottom 2nd tiles from the selected tiles
+           Vector2 temp6 = new Vector2(selectedTiles[i].index.x, selectedTiles[i].index.y-2);   //gets adjacent bottom 2nd tile from the selected tiles
            spawnTiles[(int)temp6.x, (int)temp6.y].isAdjecent = true;
             
            }
            if(selectedTiles[i].index.x+2 < spawnTiles.GetLength(0) && selectedTiles[i].index.y < spawnTiles.GetLength(1))
            {
-           Vector2 temp7 = new Vector2(selectedTiles[i].index.x+2, selectedTiles[i].index.y);   //gets adjacent right 2nd tiles from the selected tiles
+           Vector2 temp7 = new Vector2(selectedTiles[i].index.x+2, selectedTiles[i].index.y);   //gets adjacent right 2nd tile from the selected tiles
            spawnTiles[(int)temp7.x, (int)temp7.y].isAdjecent = true;
            
            }
            if(selectedTiles[i].index.x-2 > 0 && selectedTiles[i].index.y < spawnTiles.GetLength(1))
            {
-           Vector2 temp8 = new Vector2(selectedTiles[i].index.x-2, selectedTiles[i].index.y);   //gets adjacent left 2nd tiles from the selected tiles
+           Vector2 temp8 = new Vector2(selectedTiles[i].index.x-2, selectedTiles[i].index.y);   //gets adjacent left 2nd tile from the selected tiles
            spawnTiles[(int)temp8.x, (int)temp8.y].isAdjecent = true;
 
            }
-
-                
-
-          
+       
        }
     }
 
