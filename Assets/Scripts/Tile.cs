@@ -9,8 +9,7 @@ public class Tile : MonoBehaviour
     private List<Sprite> tileSprites;
     private MeshRenderer sb;
     
-    public int i = 0;
-    public int j = 0;
+    
     public bool isSelected = false;
     public bool isHighlighted = false;
     public bool isAdjecent = false;
